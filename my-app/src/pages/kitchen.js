@@ -14,7 +14,7 @@ const Form = () => {
 
     try {
 
-      const response = await fetch('http://20.197.16.153:4000/kitchen')
+      const response = await fetch('http://20.193.132.245:4000/kitchen')
       const data = await response.json();
    
 
@@ -37,7 +37,7 @@ const Form = () => {
     formDataToSend.append("image", formdata.image);
 
     try {
-      const response = await fetch('http://20.197.16.153:4000/kitchen', {
+      const response = await fetch('http://20.193.132.245:4000/kitchen', {
         method: "POST",
         body: formDataToSend,
       });
@@ -53,7 +53,7 @@ const Form = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://20.197.16.153:4000/kitchen/${id}`, {
+      const response = await fetch(`http://20.193.132.245:4000/kitchen/${id}`, {
         method: 'DELETE',
       });
   

@@ -13,7 +13,7 @@ const Login = () => {
   const handleClick = async () => {
     if (typeof window !== 'undefined') {
       try {
-        const response = await fetch('http://20.197.16.153:4000/login', {
+        const response = await fetch('http://20.193.132.245:4000/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
