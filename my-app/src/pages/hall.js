@@ -73,7 +73,7 @@ const Form = () => {
 
 if(data)
   return (
-    <div>
+    <div className="w-[1000px] lg:w-[100%]">
       <Header />
       <div className="flex flex-col justify-center py-10">
         <div className="text-2xl text-center">Please make sure you upload only hall tiles here</div>
@@ -98,7 +98,7 @@ if(data)
                 setFormData({ ...formdata, Title: e.target.value })
               }
               name="Title"
-              className="w-96 h-10 text-black p-2"
+              className="lg:w-96 lg:h-10 h-20 w-[80%] text-black p-2"
             />
           </div>
           <div className="text-center">
@@ -110,7 +110,7 @@ if(data)
                 setFormData({ ...formdata, Price: e.target.value })
               }
               value={formdata.Price}
-              className="w-96 h-10 text-black p-2"
+              className="lg:w-96 lg:h-10 w-[80%] h-20 text-black p-2"
             />
           </div>
 
@@ -127,13 +127,14 @@ if(data)
         <div className="flex flex-wrap justify-center">
   {data.map((Hall) => (
     <div key={Hall._id} className="m-4">
-      <div>
-        <Image src={`data:image/jpeg;base64,${Hall.image}`} alt="Image" className="w-auto h-96 pb-4" />
+      <div className="text-center">
+        <Image src={`data:image/jpeg;base64,${Hall.image}`} width="0" height='0' alt="Image" className="w-[600px] h-[1000px] pb-4" />
         <div className="text-center text-xl pb-2">{Hall.Title}</div>
         <div className="text-center pb-2">{Hall.Price}</div>
-        <button onClick={() => handleDelete(Hall._id)} className="ml-[85px]">
+        <div className="flex justify-center"><button onClick={() => handleDelete(Hall._id)} className="">
           Delete
         </button>
+        </div>
       </div>
     </div>
   ))}
